@@ -87,7 +87,7 @@ function checkRoundWinner(playerPick, computerPick) {
   var winnerIs = 'player';
 
     if (playerPick == computerPick) {
-        winnerIs = 'noone'; // remis
+        winnerIs = 'noone'; 
     } else if (
         (computerPick == 'rock' &&  playerPick == 'scissors') ||
         (computerPick == 'scissors' &&  playerPick == 'paper') ||
@@ -102,9 +102,12 @@ function checkRoundWinner(playerPick, computerPick) {
     } else if (winnerIs == 'computer') {
         computerResultElem.innerHTML = "Wygrana!";
         computer.score++;
+    } else (winnerIs == 'none') {
+    	playerResultElem.innerHTML = "Remis";
+    	computerResultElem.innerHTML = "Remis";
     }
-
 }
+
 
 function playerPick(playerPick) {
     var computerPick = getComputerPick();
@@ -119,6 +122,8 @@ function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
 }
+
+setGamePoints();
 
 function endGame() {
   if (player.score = 10) {
