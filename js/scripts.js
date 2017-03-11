@@ -127,7 +127,10 @@ function setGamePoints() {
 function endGame() {
   if (player.score == 10) {
     gameState = 'end';
+    setGamePoints();
   } else if (computer.score == 10) {
       gameState = 'end';
+      setGamePoints();
     }
 }
+endGame();
